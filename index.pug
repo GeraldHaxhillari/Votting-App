@@ -1,0 +1,174 @@
+header.header
+  .header__wrapper
+    a.brand-logo(href='#') Voting App
+    
+    .nav-bar
+      .nav-bar__dropdown #[span John Doe] #[i.fa.fa-caret-down]
+        ul.dropdown
+          li.dropdown__item #[a(href='#') Dashboard]
+          li.dropdown__item #[a(href='#') Settings]
+          li.dropdown__item #[a(href='#') Log out]
+          
+      a.nav-bar__link(href='#') #[i.fa.fa-plus.font-icon] #[span Poll]
+      
+      
+main.main
+  .main__wrapper
+    //- Flash messages
+    //- =======================================
+    .alert Welcome in John Doe! #[a.alert__close(href='#') #[i.fa.fa-close.font-icon]]
+    
+    .alert Incorrect password! #[a.alert__close(href='#') #[span.fontawesome-remove.font-icon]]
+    
+    
+    //- Home - All polls, hide charts
+    //- =======================================
+    .card
+      .card__title
+        h2.h2 #[a.poll-question.toggle-show(href='#') What is your favorite JavaScript library? #[i.fa.fa-line-chart.font-icon.font-icon--small]]
+      //- .card__body
+      .card__footer
+        .poll-stat.clearfix
+          span.on-left
+            a(href='#') #[i.fa.fa-user.font-icon] #[span.poll-stat__author John Doe]
+          span.on-right
+            a(href='#') #[i.fa.fa-check-square-o.font-icon] #[span.poll-stat__votes 51]
+          
+    
+    //- Home - All polls, show charts
+    //- =======================================
+    .card
+      .card__title
+        h2.h2 #[a.poll-question.toggle-show(href='#') What is your favorite JavaScript library?]
+        
+      .card__body
+      
+      .card__footer
+        .poll-stat.clearfix
+          span.on-left
+            a(href='#') #[span.fontawesome-user.font-icon] #[span.poll-stat__author John Doe]
+          span.on-right
+            a(href='#') #[span.fontawesome-ok.font-icon] #[span.poll-stat__votes 51]
+          
+       
+    //- Poll:poll_id - Vote for poll
+    //- =======================================   
+    .card
+      .card__title
+        h2.h2 #[poll-question What is your favorite JavaScript library?]
+        
+      .card__body
+        form.form(method='POST', action='/')
+          label.form__label.form__label--bordered #[input(type='radio', name='option', value='react').form__radio] React
+          
+          label.form__label.form__label--bordered #[input(type='radio', name='option', value='react').form__radio] Vue
+          
+          label.form__label.form__label--bordered #[input(type='radio', name='option', value='react').form__radio] jQuery
+          
+          label.form__label.form__label--bordered #[input(type='radio', name='option', value='react').form__radio] Other
+
+          input.form__submit(type='submit', value='Vote')
+          
+          button.form__submit.form__submt--secondary(type='button') #[i.fa.fa-twitter.font-icon] #[span Tweet]
+
+    
+    //- Dashboard - Edit poll
+    //- =======================================   
+    .card
+      .card__title
+        h2.h2 #[poll-question What is your favorite JavaScript library?]
+        
+      .card__body
+        form.form
+          label.form__label.form__label--bordered #[input(type='radio', name='option', value='react', disabled).form__radio] React
+          
+          label.form__label.form__label--bordered #[input(type='radio', name='option', value='react', disabled).form__radio] Vue
+          
+          label.form__label.form__label--bordered #[input(type='radio', name='option', value='react', disabled).form__radio] jQuery
+          
+          label.form__label.form__label--bordered #[input(type='radio', name='option', value='react', disabled).form__radio] Other
+          
+      .card__footer
+        form.form(method='POST', action='/')
+          div
+            span.form__add-option Add more options (+)
+
+          input.form__submit.form__submit--disabled(type='submit', value='Save', disabled)
+          button.form__submit.form__submit--secondary(type='button') #[i.fa.fa-trash-o.font-icon] #[span Delete]
+
+
+    
+    //- Login
+    //- =======================================   
+    .card
+      .card__title
+        h2.h2 Login
+        
+      .card__body
+        form.form(method='GET', action='/')
+          label.form__label Username #[input.form__input(type='text', required)]
+
+          label.form__label Password #[input.form__input(type='password', required)]
+
+          input.form__submit(type='submit', value='Login')
+          
+    
+    
+    //- Signup
+    //- =======================================   
+    .card
+      .card__title
+        h2.h2 Create new account
+        
+      .card__body
+        form.form(method='POST', action='/')
+          label.form__label Username #[input.form__input(type='text', required)]
+
+          label.form__label Password #[input.form__input(type='password', required)]
+
+          input.form__submit(type='submit', value='Sign up')
+
+    
+    //- Newpoll
+    //- =======================================
+    .card
+      .card__title
+        h2.h2 Create new poll
+        
+      .card__body
+        form.form(method='GET', action='/')
+          input.form__input(type='text', placeholder='Your poll question',name='question', required)
+          
+          label.form__label Option 1 #[input.form__input(type='text', required)]
+
+          label.form__label Option 2 #[input.form__input(type='text', required)]
+          
+          div
+            span.form__add-option Add more options (+)
+
+          input.form__submit(type='submit', value='Submit')
+          
+
+    
+
+    .card
+      .card__title
+        h2.h2 Settings - Change password
+        
+      .card__body
+        form.form(method='GET', action='/')
+          label.form__label Current password #[input.form__input(type='text', required)]
+
+          label.form__label New password #[input.form__input(type='text', required)]
+
+          input.form__submit(type='submit', value='Update')
+          
+          
+    .card
+      .card__title
+        h2.h2 Not Found
+          
+          
+          
+footer.footer
+  .footer__note 2019. #[a.footer__link(href='#') Voting App.] Created by #[a.footer__link(href='https://www.freecodecamp.org/geraldhaxhillari') Gerald Haxhillari]
